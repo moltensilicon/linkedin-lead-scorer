@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Lead Scorer Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LinkedIn Lead Scorer</h1>
+            <p>Configure your AI model settings</p>
+        </div>
+        
+        <form id="settings-form">
+            <div class="form-group">
+                <label for="model-provider">Model Provider:</label>
+                <select id="model-provider" required>
+                    <option value="">Select Provider</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="gemini">Gemini</option>
+                    <option value="anthropic">Anthropic</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="model-selection">Model:</label>
+                <select id="model-selection" required>
+                    <option value="">Select Model</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="api-key">API Key:</label>
+                <textarea id="api-key" placeholder="Enter your API key here..." required></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" id="test-connection" class="btn btn-secondary">
+                    Test Connection
+                </button>
+                <button type="submit" id="save-settings" class="btn btn-primary">
+                    Save Settings
+                </button>
+            </div>
+        </form>
+        
+        <div id="status-message" class="status-message"></div>
+        
+        <div class="footer">
+            <p>Scores are calculated based on profile information visible in LinkedIn invitation cards.</p>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
+
